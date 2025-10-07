@@ -1,0 +1,321 @@
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #101821 0%, #106EBE 80%, #0FFCBE 100%);
+  color: #f5f7fa;
+  letter-spacing: 0.01em;
+  font-size: 1.15rem;
+}
+
+/* HEADER */
+.app-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(16,110,190,0.13);
+  padding: 30px 40px 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-header h1 {
+  font-size: 2.8rem;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #106EBE;
+}
+
+.app-header a,
+.arsip-link {
+  color: #0FFCBE;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 9px;
+  padding: 9px 18px;
+  background: none;
+  opacity: 1 !important;
+  transition: background 0.17s, color 0.17s;
+}
+.arsip-link:hover {
+  background: #0FFCBE22;
+  color: #106EBE;
+}
+
+/* MAIN LAYOUT */
+main {
+  max-width: 1100px;
+  margin: 48px auto 0 auto;
+  padding: 0 18px 48px 18px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 28px;
+  margin-top: 0;
+  color: #106EBE;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  padding: 15px 20px;
+  width: 100%;
+  border: 1.7px solid #0FFCBE33;
+  border-radius: 15px;
+  margin-bottom: 38px;
+  font-size: 1.11rem;
+  background: #161f2b;
+  color: #f5f7fa;
+  outline: none;
+  box-shadow: 0 1px 8px 0 #0FFCBE11;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.search-bar:focus {
+  border: 1.7px solid #0FFCBE;
+  box-shadow: 0 2px 16px 0 #0FFCBE33;
+}
+
+.empty-message {
+  margin: 36px 0;
+  color: #BCEEF0;
+  font-size: 1.21rem;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* CARD LAYOUT */
+.note-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 34px;
+}
+
+/* CARD */
+.note-card {
+  background: #172131;
+  border: 1.7px solid #106EBE55;
+  border-radius: 17px;
+  box-shadow: 0 2px 20px 0 #106EBE22;
+  padding: 26px 20px 24px 20px;
+  min-height: 148px;
+  display: flex;
+  flex-direction: column;
+  transition: border 0.18s, box-shadow 0.22s, transform 0.13s;
+}
+.note-card:hover {
+  border: 1.7px solid #0FFCBE;
+  box-shadow: 0 8px 36px 0 #0FFCBE22;
+  transform: translateY(-6px) scale(1.018);
+}
+
+.note-card h2 {
+  margin: 0 0 13px 0;
+  font-size: 1.27rem;
+  font-weight: 800;
+  color: #106EBE;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.note-card .date {
+  font-size: 1.09rem;
+  color: #BCEEF0;
+  margin-bottom: 13px;
+  font-weight: 600;
+}
+
+.note-card .body {
+  font-size: 1.11rem;
+  color: #f5f7fa;
+  line-height: 1.6;
+  flex: 1 1 auto;
+}
+
+.note-card a {
+  color: #0FFCBE;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* FLOATING ADD BUTTON */
+.add-button {
+  position: fixed;
+  right: 44px;
+  bottom: 44px;
+  background: #106EBE;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+  font-size: 2.3rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 24px 0 #0FFCBE33;
+  transition: background 0.2s, box-shadow 0.18s, transform 0.13s;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-button:hover {
+  background: #0FFCBE;
+  color: #106EBE;
+  transform: scale(1.09);
+  box-shadow: 0 10px 36px 0 #0FFCBE55;
+}
+
+/* FORM & INPUT */
+.add-note-form input[type="text"] {
+  width: 100%;
+  padding: 13px 13px;
+  border: 1.7px solid #106EBE33;
+  border-radius: 13px;
+  margin-bottom: 19px;
+  font-size: 1.18rem;
+  font-weight: 600;
+  background: #161f2b;
+  color: #f5f7fa;
+  outline: none;
+  box-shadow: 0 1px 6px 0 #0FFCBE08;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.add-note-form input[type="text"]:focus {
+  border: 1.7px solid #0FFCBE;
+  box-shadow: 0 2px 12px 0 #0FFCBE33;
+}
+
+.add-note-form button[type="submit"] {
+  background: #106EBE;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 32px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 2px 12px 0 #106EBE22;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.13s;
+}
+.add-note-form button[type="submit"]:hover {
+  background: #0FFCBE;
+  color: #106EBE;
+  transform: scale(1.06);
+  box-shadow: 0 5px 22px 0 #0FFCBE33;
+}
+
+.add-note-body-input {
+  min-height: 94px;
+  background: #161f2b;
+  color: #f5f7fa;
+  border: 1.7px solid #106EBE33;
+  border-radius: 13px;
+  padding: 13px 13px;
+  margin-bottom: 17px;
+  font-size: 1.13rem;
+  font-weight: 500;
+  outline: none;
+  box-shadow: 0 1px 6px 0 #0FFCBE08;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.add-note-body-input:empty:before {
+  content: attr(data-placeholder);
+  color: #BCEEF0;
+  pointer-events: none;
+}
+.add-note-body-input:focus {
+  border: 1.7px solid #0FFCBE;
+  box-shadow: 0 2px 12px 0 #0FFCBE33;
+}
+
+/* DETAIL PAGE */
+.note-detail-actions {
+  margin-top: 34px;
+  display: flex;
+  gap: 22px;
+}
+
+.archive-button,
+.delete-button {
+  background: #106EBE;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 26px;
+  font-size: 1.13rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.15s, transform 0.11s;
+  box-shadow: 0 2px 8px 0 #0FFCBE22;
+}
+.archive-button:hover,
+.delete-button:hover {
+  background: #0FFCBE;
+  color: #106EBE;
+  transform: scale(1.06);
+  box-shadow: 0 5px 17px 0 #0FFCBE33;
+}
+
+.body {
+  word-break: break-word;
+  max-height: 420px;
+  overflow-y: auto;
+  background: #161f2b;
+  border-radius: 13px;
+  padding: 16px 16px;
+  margin-bottom: 16px;
+  font-size: 1.13rem;
+  box-shadow: 0 2px 10px 0 #106EBE11;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .note-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .note-card {
+    width: 100%;
+  }
+  .app-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 8px 10px 8px;
+  }
+  main {
+    padding: 0 6px 28px 6px;
+  }
+  .add-button {
+    right: 10px;
+    bottom: 10px;
+    width: 41px;
+    height: 41px;
+    font-size: 1.42rem;
+  }
+  .app-header a,
+  .arsip-link {
+    font-size: 1.07rem;
+    padding: 6px 13px;
+  }
+  .app-header h1 {
+    font-size: 1.63rem;
+  }
+}
+
+@media (max-width: 800px) {
+  main {
+    padding: 0 4px 32px 4px;
+  }
+  .note-list {
+    gap: 15px;
+  }
+}
